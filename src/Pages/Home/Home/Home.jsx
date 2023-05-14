@@ -51,7 +51,7 @@ const Home = () => {
                     <h2 className="font-bold">Call Now:</h2>
                     <h1>+88 02 49357766</h1>
                     <p><span className="font-bold">Address:</span> 209, Outer Circular Road, Wireless, Moghbazar, Dhaka- 1217</p>
-                    <p><span className="font-bold">Working Time:</span> </p>
+                    <p><span className="font-bold">Working Time:</span> 05:00AM to 10:00PM </p>
                     <p><span className="font-bold">Mail:</span> info@rushmono.com</p>
                 </div>
                 <div>
@@ -72,7 +72,7 @@ const Home = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10" >
                 {
                     services.map(service => <Services
-                    key={service.id}
+                    key={service._id}
                     service={service}
                     ></Services>)
                 }

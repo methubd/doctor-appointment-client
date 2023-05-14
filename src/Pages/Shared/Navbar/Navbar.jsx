@@ -35,7 +35,10 @@ const Navbar = () => {
                     {
                         user ? 
                         <div>
-                            <button className="text-sm px-2 bg-orange-700 rounded-md">See your Appointments</button>
+                            
+                            <Link to="/appointments">
+                            <button className="text-sm px-2 bg-blue-800 rounded-md">Your Bookings</button>
+                            </Link>
                             <button onClick={handleLogout} className="text-sm px-2">Logout</button>
                         </div>
                         :

@@ -38,6 +38,33 @@ const AuthProvider = ({children}) => {
             setUser(currentUser);
             // console.log('current user', currentUser);
             setLoader(false);
+
+            if(currentUser && currentUser.email){
+                const loggedUser = {
+                    email: currentUser.email
+                }                
+
+                fetch('http://localhost:5000/jwt', {
+                method: 'POST',
+                headers: {
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify(loggedUser)
+            })
+            .then(res => res.json())
+            .then(data => {
+                // console.log('jwt response', data);
+                localStorage.setItem('doc-appointment-token', data.token)
+                // set the token from data.token to localStorage
+            })
+            }
+            else{
+                localStorage.removeItem('doc-appointment-token')
+            }
+
+            // console.log(loggedUser);
+
+            
         });
         return () => {
             return unsubscribe();

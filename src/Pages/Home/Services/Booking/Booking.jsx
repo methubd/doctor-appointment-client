@@ -36,7 +36,7 @@ const Booking = () => {
                     icon: 'success',
                     title: 'You will get a phone call for re confirmation',
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 2000
                   })
                   navigate('/')
             }

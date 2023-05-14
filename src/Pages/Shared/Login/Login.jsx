@@ -27,6 +27,18 @@ const Login = () => {
                 timer: 1500
               })
         })
+        .catch(error => {
+            console.log(error.message);
+            if(error.message === "Firebase: Error (auth/user-not-found)."){
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'Sorry, User Not Found!',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
     }
 
     return (
